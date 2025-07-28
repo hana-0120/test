@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>우리반 학습 공간</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="nav-container">
+                <h1 class="logo">우리반 학습 공간</h1>
+                <ul class="nav-menu">
+                    <li><a href="#home" class="nav-link">홈</a></li>
+                    <li><a href="#announcements" class="nav-link">공지사항</a></li>
+                    <li><a href="#assignments" class="nav-link">과제</a></li>
+                    <li><a href="#quiz" class="nav-link">퀴즈</a></li>
+                    <li><a href="#resources" class="nav-link">학습자료</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <!-- 홈 섹션 -->
+        <section id="home" class="section">
+            <div class="container">
+                <h2>환영합니다!</h2>
+                <p class="welcome-text">함께 배우고 성장하는 우리반 온라인 학습 공간입니다.</p>
+                <div class="stats-container">
+                    <div class="stat-card">
+                        <h3>오늘의 할 일</h3>
+                        <p id="todayTasks">0</p>
+                    </div>
+                    <div class="stat-card">
+                        <h3>이번 주 과제</h3>
+                        <p id="weekAssignments">0</p>
+                    </div>
+                    <div class="stat-card">
+                        <h3>완료한 퀴즈</h3>
+                        <p id="completedQuizzes">0</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 공지사항 섹션 -->
+        <section id="announcements" class="section">
+            <div class="container">
+                <h2>공지사항</h2>
+                <div class="announcement-form">
+                    <input type="text" id="announcementTitle" placeholder="공지 제목">
+                    <textarea id="announcementContent" placeholder="공지 내용"></textarea>
+                    <button onclick="addAnnouncement()">공지 추가</button>
+                </div>
+                <div id="announcementsList" class="announcements-list"></div>
+            </div>
+        </section>
+
+        <!-- 과제 섹션 -->
+        <section id="assignments" class="section">
+            <div class="container">
+                <h2>과제 관리</h2>
+                <div class="assignment-form">
+                    <input type="text" id="assignmentTitle" placeholder="과제 제목">
+                    <input type="date" id="assignmentDue">
+                    <textarea id="assignmentDesc" placeholder="과제 설명"></textarea>
+                    <button onclick="addAssignment()">과제 추가</button>
+                </div>
+                <div id="assignmentsList" class="assignments-list"></div>
+            </div>
+        </section>
+
+        <!-- 퀴즈 섹션 -->
+        <section id="quiz" class="section">
+            <div class="container">
+                <h2>간단 퀴즈</h2>
+                <div id="quizContainer" class="quiz-container">
+                    <div class="quiz-question">
+                        <h3 id="questionText">문제가 여기에 표시됩니다</h3>
+                        <div id="answerOptions" class="answer-options"></div>
+                        <button onclick="checkAnswer()" class="check-btn">정답 확인</button>
+                        <button onclick="nextQuestion()" class="next-btn">다음 문제</button>
+                        <p id="feedback" class="feedback"></p>
+                    </div>
+                    <div class="quiz-score">
+                        <p>점수: <span id="score">0</span></p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 학습자료 섹션 -->
+        <section id="resources" class="section">
+            <div class="container">
+                <h2>학습자료</h2>
+                <div class="resource-form">
+                    <input type="text" id="resourceTitle" placeholder="자료 제목">
+                    <input type="text" id="resourceLink" placeholder="링크 URL">
+                    <select id="resourceType">
+                        <option value="video">동영상</option>
+                        <option value="document">문서</option>
+                        <option value="website">웹사이트</option>
+                    </select>
+                    <button onclick="addResource()">자료 추가</button>
+                </div>
+                <div id="resourcesList" class="resources-list"></div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 우리반 학습 공간. 모든 권리 보유.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
